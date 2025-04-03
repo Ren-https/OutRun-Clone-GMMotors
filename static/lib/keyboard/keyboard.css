@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "Material_Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("keyboard.woff2") format("woff2");
+}
+
+/* Container principal do teclado */
+.keyboard {
+  position: fixed;
+  left: 50%;
+  bottom: 15%;               /* Posicionado um pouco acima da borda inferior */
+  transform: translateX(-50%);
+  width: 90%;                /* Ocupa 90% da largura da tela */
+  max-width: 600px;          /* Tamanho máximo para telas maiores */
+  padding: 20px;             /* Reduzido para diminuir o espaço interno */
+  background: rgba(0, 0, 0, 0.8);  /* Mesma tonalidade escura do game over */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  user-select: none;
+  transition: bottom 0.4s;
+  z-index: 9999;            /* Superior ao overlay do game over (9999) */
+  font-family: "Material_Icons";
+}
+
+/* Para ocultar o teclado (se necessário) */
+.keyboard--hidden {
+  bottom: -100%;
+}
+
+/* Container das teclas */
+.keyboard__keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  /* Não fixamos uma altura para permitir melhor responsividade */
+}
+
+/* Estilo individual das teclas */
+.keyboard__key {
+  height: 30px;
+  width: 26px;                /* Largura relativa à viewport */
+  max-width: 60px;           /* Tamanho máximo reduzido para teclas menores */
+  margin: 3px;
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+  font-size: 1rem;         /* Fonte um pouco menor */
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  min-width: fit-content;
+}
+
+.keyboard__key:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Classes para teclas com largura diferenciada */
+.keyboard__key--wide {
+  width: 12%;
+}
+
+.keyboard__key--extra-wide {
+  width: 100%;
+  max-width: none;
+}
+
+/* Indicação para teclas ativáveis (opcional) */
+.keyboard__key--activatable::after {
+  content: "";
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+/* Exemplo para teclas escuras */
+.keyboard__key--dark {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Elementos não utilizados */
+.next,
+.prev,
+.dot {
+  display: none !important;
+}
+
+/* Se houver uma camada que desativa o teclado */
+.KeyboardOff {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+/* Estilo para inputs inválidos, se necessário */
+.invalid {
+  border: #ea3e3e 2px solid;
+}
+
+/* Exemplo de ajuste para uma tecla específica (@) */
+.keyboard__arroba {
+  width: fit-content;
+  top: 0%;
+  padding: 0 10px;
+  border-radius: 5px;
+}

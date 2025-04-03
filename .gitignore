@@ -1,0 +1,6 @@
+# Ignorar configurações do VS Code
+.vscode/
+
+# Ignorar dependências do Node.js
+node_modules/.vscode/
+node_modules/
