@@ -22,8 +22,6 @@ Execução: Roda diretamente em navegadores modernos
 
 Servidor Backend: Node.js
 
-Banco de Dados: (Especifique o banco utilizado, se houver)
-
 Plataformas Suportadas: Qualquer dispositivo com um navegador compatível
 
 Como Executar
